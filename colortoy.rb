@@ -9,7 +9,7 @@ require 'core_ext'
 require 'cluster'
 
 require 'rubygems'
-require 'rmagick'
+require 'RMagick'
 
 MIN_CLUSTERS = 4
 
