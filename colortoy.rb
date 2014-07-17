@@ -33,15 +33,10 @@ def main(img_name, cluster_cnt)
     t[0..2].inject("#") {|s, c| s + "%02x" % (c*256) }
   end
 
-  Tempfile.open(['colortoy', '.html']) do |fh|
+  fh = $stdout
     fh.write(template.result(binding))
     fh.flush
     fh.close
-    cmd = "open #{fh.path}"
-    system cmd
-    puts "Press Enter when finished..."
-    STDIN.gets
-  end
 end
 
 if $0 == __FILE__
